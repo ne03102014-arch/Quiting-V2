@@ -444,7 +444,7 @@ private fun SettingsScreen(vm: AppViewModel) {
                     .fillMaxWidth()
                     .glassCard(vm.style, shape)
                     .then(selectedBorder)
-                    .clickable { vm.setStyle(s) }
+                    .clickable { vm.chooseStyle(s) }
                     .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -464,7 +464,7 @@ private fun SettingsScreen(vm: AppViewModel) {
             ThemeMode.values().forEach { m ->
                 FilterChip(
                     selected = vm.themeMode == m,
-                    onClick = { vm.setMode(m) },
+                    onClick = { vm.chooseMode(m) },
                     label = { Text(m.label) }
                 )
             }
