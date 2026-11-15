@@ -47,12 +47,12 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun persist() = store.saveProfiles(profiles.toList())
 
-    fun setStyle(s: AppStyle) {
+    fun chooseStyle(s: AppStyle) {
         style = s
         store.putString("style", s.name)
     }
 
-    fun setMode(m: ThemeMode) {
+    fun chooseMode(m: ThemeMode) {
         themeMode = m
         store.putString("mode", m.name)
     }
